@@ -1,50 +1,77 @@
 <!DOCTYPE html> <!-- Указывайте Doctype -->
 <html lang="ru"> <!-- Указывайте язык документа -->
+
 <head>
   <meta charset="UTF-8"> <!-- Указывайте кодировку -->
   <title>LEONI ART — Главная</title> <!-- Заголовок страницы -->
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
-<body>
+
+<body class="body">
   <!-- Шапка сайта -->
-  <header>
-    <!-- Логотип -->
-    <div class="logo">
-      <h1>LEONI ART</h1>
-    </div>
-
+  <header class="page-header">  
+    <a class="page-header__logo" href="#"></a>
     <!-- Навигационное меню -->
-    <nav>
-      
-      <a href="#">Мероприятия</a>
-      <a href="#">Блог</a>
-      <a href="#">О нас</a>
-      <a href="#">Контакты</a>
-      <button class="card-auth">Войти</button>
+    <nav class="page-header__nav">
+      <a class="page-header__nav-link" href="#">О нас</a>
+      <a class="page-header__nav-link" href="#">Мероприятия</a>
+      <a class="page-header__nav-link" href="#">Блог</a>
+      <a class="page-header__nav-link" href="#">Контакты</a>
     </nav>
-
+    <a class="page-header__user-link" href="#">Войти</a>
   </header>
 
   <!-- Основное содержимое -->
-<main>
-        <div class="card">
-            <div class="card-header">
-                <hr class="card-divider">
-                <div class="card-date">30.10.2025</div>
-            </div>
-            <div class="card-content">
-                <h2 class="card-title">Фотосессия в стенах Театра драмы</h2>
-                <p class="card-description">
-                    Организовывая фотосессию для локального бренда
-                    одежды мы смогли воплотить все пожелания заказчика и у
-                    нас получилась отличная работа. Смотрите как это было.
-                </p>
-                <button class="card-button"> подробнее</button>
-            </div>
-        </div>
-    </main>
+  <main class="main">
+    <div class="home">
+      <header class="main-header home__main-header">
+        <h1 class="main-header__title">АРТ-ПРОСТРАНСТВО</h1>
+        <img />
+        <p> Для людей, горящих сердцем и делом
+            место для настоящего </p>
+      </header>
+
+            
+      <section class="offers home__offers"> 
+        <h2 class="offers__title">я хочу:</h2>
+      <div class="offers__btn">
+        <button class="offers__btn btn btn--red" type="button">Провести мероприятие</button>    
+        <button class="offers__btn btn" type="button">Стать арендатором</button>    
+      </div>
+      </section>
+            
+
+      <section class="about home__about"> 
+        <h2 class="about__section-title section-title">О нас</h2>
+      <div class="about__container">  
+      </div>
+      </section>
+
+
+      <section class="upcoming home__upcoming">
+        <h2 class="upcoming__section-title section-title">Мероприятия</h2>
+      <div class="upcoming__container"> </div>
+      </section>
+
+      <section class="listing home__listing">
+        <h2 class="listing__section-title section-title">Блог</h2>
+        <div></div>
+      </section>
+      
+
+      <section class="contacts home__contacts">
+        <h2 class="contacts__section-title section-title">Контакты</h2>
+        <div class="contacts__container"></div>
+      </section>
+      
+      <div class="doit"></div>
+    </div>
+  </main>
+
+  
                                    
   <!-- Информация внизу -->
-  <footer>
+  <footer class="page-footer">
     <a href="#">Календарь</a>
     <a href="#">Провести мероприятие</a>
     <a href="#">Стать арендатором</a>

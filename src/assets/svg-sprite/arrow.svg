@@ -1,0 +1,5 @@
+<svg viewBox="0 0 70 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none">
+	<rect id="fi:arrow-right" width="70.000000" height="24.000000" x="0.000000" y="0.000000" />
+	<path id="Vector" d="M5 12L65 12" stroke="rgb(31,30,30)" stroke-width="2" />
+	<path id="Vector" d="M58 5L65 12L58 19" fill-rule="nonzero" stroke="rgb(31,30,30)" stroke-width="2" />
+</svg>

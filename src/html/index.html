@@ -1,0 +1,18 @@
+<!DOCTYPE html> <!-- Указывайте Doctype -->
+<html lang="ru"> <!-- Указывайте язык документа -->
+  @@include('blocks/head.html')
+
+  <body class="body">
+    @@include('blocks/page-header.html')
+    <main class="main">
+      <div class="home">
+        @@include('blocks/about.html')
+
+        <!-- prerrier-ignore -->
+        @@include("blocks/block-listing.html", {"class":"home__listing"})
+      </div>
+    </main>
+    @@include('blocks/page-footer.html')
+  </body>
+
+</html>

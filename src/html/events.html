@@ -1,0 +1,51 @@
+<!DOCTYPE html> <!-- Указывайте Doctype -->
+<html lang="ru"> <!-- Указывайте язык документа -->
+  @@include('blocks/head.html')
+  <body class="body">
+    @@include('blocks/page-header.html')
+    <main class="main">
+      <div class="events">
+        <section class="listing events__listing" >
+            <h2 class="listing__section-title section-title"> Мероприятия</h2>
+            
+            <div class="listing__events-list">
+              <!-- prerrier-ignore -->
+              @@loop('blocks/event-card.html', [
+                {
+                  "class": "listing__event-card",
+                  "img": "assets/images/events/nirvana.jpeg",
+                  "alt": "nirvana",
+                  "title": "Собираемся и слушаем альбом Nirvana. Nirvana",
+                  "descr": "Это третий альбом группы, выпущенный после смерти Курта Кобейна и первый, содержащий студийный материал.",
+                  "time": "07.12.2024 | начало 18.00",
+                  "datetime": "2024-12-07T18:00"
+                },
+                {
+                  "class": "listing__event-card",
+                  "img": "assets/images/events/HowStuffWorks.jpg",
+                  "alt": "nirvana",
+                  "title": "Есть тема, нужно обсудить с HowStuffWorks",
+                  "descr": "Один из самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные вещи.",
+                  "time": "14.12.2024 | начало 18.30",
+                  "datetime": "2024-12-14T18:30"
+                }
+              ])
+            </div>
+        </section>
+      </div>
+    </main>
+
+                                    
+    <!-- Информация внизу -->
+    <footer class="page-footer">
+      <div class="footer-links">
+        <a href="#">Календарь мероприятий</a>
+        <a href="#">Провести мероприятие</a>
+        <a href="#">Стать арендатором</a>
+        <a href="#">Наши проекты</a>
+        <a href="#">Контакты</a>
+      </div>
+    </footer>
+  </body>
+
+</html>

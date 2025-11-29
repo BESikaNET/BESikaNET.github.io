@@ -1,0 +1,97 @@
+<!DOCTYPE html> <!-- Указывайте Doctype -->
+<html lang="ru"> <!-- Указывайте язык документа -->
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Lenni Art</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body class="body">
+  <header class="page-header">
+    <div class="page-header__container">
+      <a class="page-header__logo" href="#">
+        <svg class="page-header__logo-icon" width="202" height="147">
+          <use xlink:href="assets/icons/symbols.svg#logo">
+        </svg>
+      </a>
+      <!-- Навигационное меню -->
+      <nav class="page-header__nav">
+        <a class="page-header__nav-link" href="#">Мероприятия</a>
+        <a class="page-header__nav-link" href="#">Блог</a>
+        <a class="page-header__nav-link" href="#">О нас</a>
+        <a class="page-header__nav-link" href="#">Контакты</a>
+      </nav>
+
+      <div class="page-header__right-block">
+        <a class="page-header__user-link btn" href="#">Войти</a>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="events">
+      <section class="listing events__listing">
+        <h2 class="listing__section-title section-title"> Мероприятия</h2>
+
+        <div class="listing__events-list">
+          <!-- prerrier-ignore -->
+          <article class="event-card listing__event-card">
+            <a href="#" class="event-card__link">
+              <picture class="event-card__picture">
+                <img src="assets/images/events/nirvana.jpeg" alt="nirvana" class="event-card__img" />
+              </picture>
+
+              <h4 class="event-card__title">
+                Собираемся и слушаем альбом Nirvana. Nirvana
+              </h4>
+
+              <p class="event-card__description">
+                @@discr
+              </p>
+
+              <time datetime="2024-12-07T18:00" class="event-card__time">
+                07.12.2024 | начало 18.00
+              </time>
+            </a>
+          </article>
+          <article class="event-card listing__event-card">
+            <a href="#" class="event-card__link">
+              <picture class="event-card__picture">
+                <img src="assets/images/events/HowStuffWorks.jpg" alt="nirvana" class="event-card__img" />
+              </picture>
+
+              <h4 class="event-card__title">
+                Есть тема, нужно обсудить с HowStuffWorks
+              </h4>
+
+              <p class="event-card__description">
+                @@discr
+              </p>
+
+              <time datetime="2024-12-14T18:30" class="event-card__time">
+                14.12.2024 | начало 18.30
+              </time>
+            </a>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+
+  <!-- Информация внизу -->
+  <footer class="page-footer">
+    <div class="footer-links">
+      <a href="#">Календарь мероприятий</a>
+      <a href="#">Провести мероприятие</a>
+      <a href="#">Стать арендатором</a>
+      <a href="#">Наши проекты</a>
+      <a href="#">Контакты</a>
+    </div>
+  </footer>
+</body>
+
+</html>

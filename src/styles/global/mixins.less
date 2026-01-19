@@ -8,5 +8,36 @@
     margin: 0 auto;
     padding-left: 40px;
     padding-right: 40px;
-    height: 100%;
+}
+
+.display-none {
+    display: none;
+}
+
+.color-red {
+    color: @red;
+}
+
+.show-event-popup {
+    body {
+        overflow: hidden;
+    }
+    #eventPP{
+        display: flex;
+    }
+}
+
+.is-hidden {
+    position: absolute !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    clip: rect(0 0 0) !important;
+    clip-path: 100% !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
 }

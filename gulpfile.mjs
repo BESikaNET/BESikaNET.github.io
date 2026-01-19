@@ -51,16 +51,24 @@ function clean(done) {
 
 function includeHtml() {
   return gulp
-    .src("src/html/*.html")
+    .src("src/html/**/*.html")  // Изменено: добавлено ** для всех вложенных файлов
     .pipe(plumber())
     .pipe(
       include({
         prefix: "@@",
         basepath: "@file",
+        context: {
+          env: process.env.NODE_ENV || 'development'
+        },
+        indent: true
       })
     )
+    .on('error', function(err) {
+      console.error('HTML include error:', err.message);
+      this.emit('end');
+    })
     .pipe(formatHtml())
-    .pipe(gulp.dest("dist"));
+    .pipe(gulp.dest("dist"));  // Все HTML файлы попадут в dist с сохранением структуры
 }
 
 function style() {
@@ -68,6 +76,10 @@ function style() {
     .src("src/styles/styles.less")
     .pipe(plumber())
     .pipe(less())
+    .on('error', function(err) {
+      console.error('Less compilation error:', err.message);
+      this.emit('end');
+    })
     .pipe(
       postcss([
         autoprefixer({ overrideBrowserslist: ["last 4 version"] }),
@@ -79,12 +91,13 @@ function style() {
     .pipe(gulp.dest("dist/styles"))
     .pipe(minify())
     .pipe(rename("styles.min.css"))
-    .pipe(gulp.dest("dist/styles"));
+    .pipe(gulp.dest("dist/styles"))
+    .pipe(server.stream());
 }
 
 function js() {
   return gulp
-    .src("src/scripts/dev/*.js")
+    .src("src/scripts/dev/**/*.js")
     .pipe(plumber())
     .pipe(
       include({
@@ -150,15 +163,78 @@ function svgSprite() {
     .pipe(gulp.dest("dist/assets/icons"));
 }
 
+// Проверка HTML структуры
+function checkHtml(done) {
+  console.log('Checking HTML structure...');
+  console.log('Looking for events.html...');
+  const fs = require('fs');
+  const path = require('path');
+  
+  const eventsPath = path.join(process.cwd(), 'src/html/events.html');
+  if (fs.existsSync(eventsPath)) {
+    console.log('✓ events.html found at:', eventsPath);
+    const content = fs.readFileSync(eventsPath, 'utf8');
+    const hasTableInclude = content.includes('@include("blocks/table.html")') || 
+                           content.includes("@include('blocks/table.html')");
+    console.log(hasTableInclude ? '✓ Table include found' : '✗ Table include NOT found');
+    
+    // Check if table.html exists
+    const tablePath = path.join(process.cwd(), 'src/html/blocks/table.html');
+    if (fs.existsSync(tablePath)) {
+      console.log('✓ table.html found at:', tablePath);
+    } else {
+      console.log('✗ table.html NOT found at:', tablePath);
+      console.log('Looking for table.html in other locations...');
+      const searchPaths = [
+        'src/html/blocks/table.html',
+        'src/blocks/table.html',
+        'src/html/table.html',
+        'blocks/table.html'
+      ];
+      
+      for (const searchPath of searchPaths) {
+        const fullPath = path.join(process.cwd(), searchPath);
+        if (fs.existsSync(fullPath)) {
+          console.log(`✓ Found at: ${searchPath}`);
+          break;
+        }
+      }
+    }
+  } else {
+    console.log('✗ events.html NOT found at:', eventsPath);
+    console.log('Looking in other locations...');
+    
+    const searchPaths = [
+      'src/html/events.html',
+      'src/events.html',
+      'events.html',
+      'html/events.html'
+    ];
+    
+    for (const searchPath of searchPaths) {
+      const fullPath = path.join(process.cwd(), searchPath);
+      if (fs.existsSync(fullPath)) {
+        console.log(`✓ Found at: ${searchPath}`);
+        break;
+      }
+    }
+  }
+  
+  done();
+}
+
 const build = gulp.series(
   clean,
-  copy,
-  includeHtml,
-  style,
-  js,
-  jsCopy,
-  images,
-  svgSprite
+  checkHtml,
+  gulp.parallel(
+    copy,
+    includeHtml,
+    style,
+    js,
+    jsCopy,
+    images,
+    svgSprite
+  )
 );
 
 function reloadServer(done) {
@@ -169,7 +245,13 @@ function reloadServer(done) {
 function serve() {
   server.init({
     server: "dist",
+    notify: false,
+    open: true,
+    cors: true,
+    ui: false,
+    port: 3000
   });
+  
   gulp.watch(resources.html, gulp.series(includeHtml, reloadServer));
   gulp.watch(resources.less, gulp.series(style, reloadServer));
   gulp.watch(resources.jsDev, gulp.series(js, reloadServer));
@@ -181,13 +263,23 @@ function serve() {
     gulp.series(images, reloadServer)
   );
   gulp.watch(resources.svgSprite, gulp.series(svgSprite, reloadServer));
+  
+  // Показать доступные URL
+  setTimeout(() => {
+    console.log('\n=== Доступные страницы ===');
+    console.log('Главная: http://localhost:3000/');
+    console.log('Мероприятия: http://localhost:3000/events.html');
+    console.log('===========================\n');
+  }, 1000);
 }
 
 const start = gulp.series(build, serve);
 
 export {
-    build, clean,
-    copy, images, includeHtml, js,
-    jsCopy, serve,
-    start, style, svgSprite
+  build, checkHtml, clean, copy, images, includeHtml, js,
+  jsCopy, serve,
+  start, style, svgSprite
 };
+
+// Дефолтная задача
+export default start;

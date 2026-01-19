@@ -1,0 +1,63 @@
+.pp {
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 45px 90px 50px;
+    backdrop-filter: blur(50px);
+    background: rgba(28, 27, 27, 0.4);
+    overflow-y: auto;
+    z-index: 110;
+    display: none;
+    
+    &__wrapper {
+        box-sizing: border-box;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        max-width: 1210px;
+        width: 100%;
+        margin: auto;
+        background-color: #dedede;
+        background-image: url(../assets/images/noise.png);
+        background-position: 0 0, 0 0;
+        background-size: auto, 100%, auto;
+        background-repeat: repeat, repeat-y;
+    }
+    
+
+
+    &__x-btn {
+        position: absolute;
+        top: -30px;
+        right: -30px;
+    }
+    
+    &__title {
+        position: relative;
+        margin: -40px 0 70px;
+        padding: 10px 85px;
+        max-width: 595px;
+        width: 100%;
+        background-color: @black;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-family: @font2;
+        font-size: 22px;
+        line-height: 1.36;
+        color: @white;
+        letter-spacing: 0.02em;
+        z-index: 1;
+        text-align: center;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    &__container {
+        box-sizing: border-box;
+        padding: 100px 85px 85px;
+        width: 100%;
+    }
+}

@@ -1,4 +1,27 @@
 .event {
-    padding: 40px 0 150px
-
+    padding: 40px 0 150px;
+    
+    &__container {
+        .container(); // если есть такой миксин
+        // или
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    &__content {
+        max-width: 830px;
+        margin: 0 auto; // центрирование контента
+        width: 100%;
+    }
+    
+    &__reserve {
+        margin-top: 60px;
+        max-width: 830px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
 }

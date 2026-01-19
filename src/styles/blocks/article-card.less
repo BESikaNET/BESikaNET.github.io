@@ -1,14 +1,19 @@
+// article-card.less - ИСПРАВЛЕННАЯ ВЕРСИЯ
 .article-card {
     box-sizing: border-box;
     display: flex;
-    &:hover{
-        .article-card__picture{
+    position: relative; // <-- Добавлено для правильной работы ::before
+    
+    &:hover {
+        .article-card__picture {
             box-shadow: 0px 0px 30px 0px rgba(31, 31, 30, 0.55);
         }
     }
-    & + .article-card{
+    
+    & + .article-card {
         margin-top: 120px;
-        &::before{
+        
+        &::before {
             content: "";
             display: block;
             position: absolute;
@@ -18,39 +23,45 @@
             right: 0;
             max-width: 1255px;
             width: 100%;
+            height: 1px; // <-- Добавлено высоту
             background-color: @black;
             pointer-events: none;
         }
     }
-    &__link{
+    
+    &__link {
         margin-right: 60px;
         display: block;
-        width: 467;
+        width: 467px; // <-- Добавлено "px"
         text-decoration: none;
         font-size: 0;
+        
         &:hover {
-            & ~ .article-card__info{ 
-                .article-card__title-link{
+            & ~ .article-card__info { 
+                .article-card__title-link {
                     color: @red;
                     text-decoration-color: @red;
                 }
             }
         }
     }
-    &__picture{
+    
+    &__picture {
         display: block;
         position: relative;
         width: 100%;
         overflow: hidden;
         transition: box-shadow 0.2s;
-        &::after{
+        
+        &::after {
             content: '';
             display: block;
             width: 100%;
             padding-top: 62.715%;
         }
     }
-    &__img{
+    
+    &__img {
         display: block;
         position: absolute;
         top: 0;
@@ -59,7 +70,8 @@
         height: 100%;
         object-fit: cover;
     }
-    &__info{
+    
+    &__info {
         box-sizing: border-box;
         position: relative;
         display: flex;
@@ -69,6 +81,7 @@
         padding-bottom: 30px;
         padding-left: 150px;
     }
+    
     &__time {
         margin: 0 0 40px;
         color: @black;
@@ -76,32 +89,38 @@
         font-weight: 300;
         line-height: 22px;
     }
+    
     &__title-link,
-    &__description{
+    &__description {
         max-width: 470px;
     }
-    &__title-link{
+    
+    &__title-link {
         margin: auto 0 40px;
         font-weight: 600;
         font-size: 24px;
         color: @black;
         text-decoration-color: transparent;
         transition: color 0.2s, text-decoration-color 0.2s;
-        &:hover{
+        
+        &:hover {
             color: @red;
             text-decoration-color: @red;
         }
     }
-    &__title{
+    
+    &__title {
         margin: 0;
         font-weight: 600;
         font-size: 24px;
         line-height: 33px;
     }
-    &__description{
+    
+    &__description {
         margin: 0;
     }
-    &__arrow{
+    
+    &__arrow {
         position: absolute;
         right: 0;
         bottom: 30px;

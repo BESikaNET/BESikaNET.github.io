@@ -1,5 +1,6 @@
 .btn {
     display: inline-flex;
+    justify-content: center;
     box-sizing: border-box;
     padding: 15px 40px;
     border: 1px solid @black;
@@ -17,17 +18,20 @@
     cursor: pointer;
     align-items: center;
     justify-content: center;
+    
     &:hover,
-    &:hover {
-    background-color: #1F1F1F;
-    color: white;
+    &:active {  
+        background-color: #1F1F1F;
+        color: white;
     }
+    
     &--red {
         color: @white;
         background-color: @red;
-        border: 1px @red_dark;
+        border: 1px solid @red_dark; 
+        
         &:hover {
-            background-color: @red-dark;
+            background-color: @red_dark;
             color: @white;
         }
     }

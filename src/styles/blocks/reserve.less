@@ -1,29 +1,149 @@
 .reserve {
     display: grid;
     grid-template-columns: 405px 1fr;
-    /* grid-template-columns: 405px calc(89% - 405px); */
     gap: 65px 11%;
     grid-template-areas: 
-    "checks scheme"
-    "order legend";
+        "checks scheme"
+        "order legend";
     width: 100%;
     
-    &__checks {
-        grid-area: checks;
-        background-color: yellowgreen;
-    }
-
     &__scheme {
         grid-area: scheme;
-        background-color: aqua;
+        
+        &-wrapper {
+            position: relative;
+        }
+        
+        &-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+    
+    &__scene-label {
+        position: absolute;
+        padding: 5px;
+        top: -35px; /* отрегулируй по своему макету */
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 16px;
+        font-weight: 600;
+        color: @white;
+        background-color: @black;
+        z-index: 1;
+        text-transform: lowercase;
     }
 
+    &__checks {
+        grid-area: checks;
+    }
+    
+    &__scheme {
+        grid-area: scheme;
+    }
+    
     &__order {
         grid-area: order;
-        background-color: red;
     }
+    
     &__legend {
         grid-area: legend;
-        background-color: blueviolet;
+        text-align: right;
+    }
+    
+    &__title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+    
+    &__price-list,
+    &__note-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    &__price-item,
+    &__note-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        justify-content: flex-end;
+    }
+    
+    &__badge {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 12px;
+        flex-shrink: 0;
+        
+        &--red-square {
+            background-color: @red_dark;
+        }
+        
+        &--black-square {
+            background-color: @black;
+        }
+        
+        &--double-ring {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                border: 2px solid #000;
+                border-radius: 50%;
+                width: 16px;
+                height: 16px;
+            }
+            
+            &::before {
+                left: 0;
+                top: 0;
+                z-index: 1;
+            }
+            
+            &::after {
+                right: 0;
+                top: 0;
+                z-index: 2;
+            }
+        }
+        
+        &--gray-circle {
+            background-color: rgba(191, 191, 191, 1);
+            border-radius: 100%;
+        }
+    }
+    
+    &__note {
+        margin-top: 30px;
+        
+        &-title {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 25px;
+            letter-spacing: 0%;
+            text-align: right;
+            margin-bottom: 15px;
+        }
+        
+        &-list {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        
+        &-item {
+            justify-content: flex-end;
+            width: 100%;
+        }
     }
 }

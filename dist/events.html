@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user=scalable=no">
   <title>Lenni Art</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,10 +25,23 @@
         <a class="page-header__nav-link" href="#">Блог</a>
         <a class="page-header__nav-link" href="#">О нас</a>
         <a class="page-header__nav-link" href="#">Контакты</a>
+        <div class="page-header__nav-user">
+          <a href="#" class="page-header__nav-user-link">Александр С.</a>
+          <a href="#" class="page-header__nav-logout">
+            <svg class="page-header__logo-icon" width="24" height="24">
+              <use xlink:href="assets/icons/symbols.svg#logout">
+            </svg>
+          </a>
+        </div>
       </nav>
 
       <div class="page-header__right-block">
-        <a class="page-header__user-link btn" href="#">Войти</a>
+        <a class="page-header__btn" href="#">Войти
+          <svg class="page-header__user-icon" width="24" height="24">
+            <use xlink:href="assets/icons/symbols.svg#user">
+          </svg>
+        </a>
+        <button type="button" class="page-header__nav-toggle"></button>
       </div>
     </div>
   </header>
@@ -48,11 +62,30 @@
               </h4>
 
               <p class="event-card__description">
-                Это третий альбом группы, выпущенный после смерти Курта Кобейна и первый, содержащий студийный материал.
+                Это третий альбом группы, выпущенный после смер ти Курта Кобейна и первый, содержащий студийный материал.
               </p>
 
               <time datetime="2024-12-07T18:00" class="event-card__time">
                 07.12.2024 | начало 18.00
+              </time>
+            </a>
+          </article>
+          <article class="event-card listing__event-card">
+            <a href="#" class="event-card__link">
+              <picture class="event-card__picture">
+                <img src="assets/images/events/HowStuffWorks.jpg" alt="nirvana" class="event-card__img" />
+              </picture>
+
+              <h4 class="event-card__title">
+                Есть тема, нужно обсудить с HowStuffWorks
+              </h4>
+
+              <p class="event-card__description">
+                Один из самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные вещи.
+              </p>
+
+              <time datetime="2024-12-14T18:30" class="event-card__time">
+                14.12.2024 | начало 18.30
               </time>
             </a>
           </article>
@@ -194,9 +227,15 @@
         <tfoot class="table__footer">
           <tr class="table__footer-tr">
             <th class="table__footer-th"></th>
-            <th class="table__footer-th">Тариф «Light»</th>
-            <th class="table__footer-th">Тариф «Promo»</th>
-            <th class="table__footer-th">Тариф «All stars»</th>
+            <th class="table__footer-th">Тариф
+              <br />«Light»
+            </th>
+            <th class="table__footer-th">Тариф
+              <br />«Promo»
+            </th>
+            <th class="table__footer-th">Тариф
+              <br />«All stars»
+            </th>
           </tr>
         </tfoot>
       </table>

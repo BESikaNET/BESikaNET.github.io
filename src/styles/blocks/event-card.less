@@ -1,17 +1,14 @@
 .event-card {
     display: flex;
-    width: 100%; /* Изменено: было 405px, теперь 100% */
+    width: 406px; /* Изменено: было 405px, теперь 100% */
     height: 100%;
     min-width: 280px;
-
     &__link {
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 100%; /* Добавлено */
         color: #1F1e1e;
         text-decoration: none;
-        
         &:hover {
             .event-card__title {
                 color: @red;
@@ -20,24 +17,17 @@
         }
     }
 
-    &__title {
-        margin: 0 0 15px;
-        min-height: 66px;
-        font-weight: 600;
-        font-size: 24px;
-        line-height: 1.375;
-        text-decoration: underline transparent;
-        transition: color 0.2s, text-decoration-color 0.2s;
-    }
-
     &__picture {
         display: block;
         position: relative;
+        width: 100%;
         margin: 0 0 25px;
         font-size: 0;
         text-decoration: none;
         overflow: hidden;
-
+        @media @bw1660 {
+            margin-bottom: 0 0 20px;
+        }
         &::after {
             content: '';
             display: block;
@@ -46,7 +36,7 @@
         }
     }
 
-    &__img {
+        &__img {
         display: block;
         position: absolute;
         top: 0;
@@ -56,9 +46,38 @@
         object-fit: cover;
     }
 
+    &__title {
+        margin: 0 0 15px;
+        min-height: 66px;
+        color: @black;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 33px;
+        text-decoration: underline transparent;
+        transition: color 0.2s, text-decoration-color 0.2s;
+        @media @bw1660 {
+            margin-bottom: 0 0 10px;
+        }
+        @media @bw1340 {
+            font-size: 20px;
+            line-height: 27px;
+            min-height: 54px;
+        }
+        @media @bw768 {
+            font-size: 16px;
+            line-height: 22px;
+            min-height: 45px;
+        }
+    }
+
     &__description {
         margin: 0 0 auto;
         flex-grow: 1; /* Чтобы description занимал доступное пространство */
+        @media @bw768 {
+            font-size: 14px;
+            line-height: 19px;
+            min-height: 54px;
+        }
     }
 
     &__time {

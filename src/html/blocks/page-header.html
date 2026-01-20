@@ -11,10 +11,23 @@
       <a class="page-header__nav-link" href="#">Блог</a>
       <a class="page-header__nav-link" href="#">О нас</a>
       <a class="page-header__nav-link" href="#">Контакты</a>
+      <div class="page-header__nav-user">
+        <a href="#" class="page-header__nav-user-link">Александр С.</a>
+        <a href="#" class="page-header__nav-logout">
+          <svg class="page-header__logo-icon" width="24" height = "24">
+            <use xlink:href="assets/icons/symbols.svg#logout"> 
+          </svg>
+        </a>
+      </div>
     </nav>
     
     <div class="page-header__right-block">
-      <a class="page-header__user-link btn" href="#">Войти</a>
+      <a class="page-header__btn" href="#">Войти
+        <svg class="page-header__user-icon" width="24" height = "24">
+          <use xlink:href="assets/icons/symbols.svg#user"> 
+        </svg>
+      </a>
+      <button type="button" class="page-header__nav-toggle"></button>
     </div>  
   </div>
 </header>

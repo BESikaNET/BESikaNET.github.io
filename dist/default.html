@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user=scalable=no">
   <title>Lenni Art</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,10 +25,23 @@
         <a class="page-header__nav-link" href="#">Блог</a>
         <a class="page-header__nav-link" href="#">О нас</a>
         <a class="page-header__nav-link" href="#">Контакты</a>
+        <div class="page-header__nav-user">
+          <a href="#" class="page-header__nav-user-link">Александр С.</a>
+          <a href="#" class="page-header__nav-logout">
+            <svg class="page-header__logo-icon" width="24" height="24">
+              <use xlink:href="assets/icons/symbols.svg#logout">
+            </svg>
+          </a>
+        </div>
       </nav>
 
       <div class="page-header__right-block">
-        <a class="page-header__user-link btn" href="#">Войти</a>
+        <a class="page-header__btn" href="#">Войти
+          <svg class="page-header__user-icon" width="24" height="24">
+            <use xlink:href="assets/icons/symbols.svg#user">
+          </svg>
+        </a>
+        <button type="button" class="page-header__nav-toggle"></button>
       </div>
     </div>
   </header>

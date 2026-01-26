@@ -1,13 +1,17 @@
 .listing {
+
     box-sizing: border-box;
+    padding: 0px 40px 100px;
     display: flex;
     flex-direction: column;
-    .container();
-    
+    &__title{
+        margin-top: 100px;
+    }
     &__events-list {
         display: flex;
         flex-wrap: wrap;
         gap: 115px 58px;
+        justify-content: center;
         @media @bw1660 {
             gap: 90px 40px;
         }
@@ -35,4 +39,30 @@
             width: 100%;
         }
     }
+    &__link {
+        margin-left: auto;
+        width: 150px;
+        margin-right: 219px;
+        padding: 20px;
+        text-transform: none;
+        text-decoration: none;
+        @media @bw1660 {
+            margin-right: 35px;
+        }
+
+        &:hover {
+            color: @red;
+            text-decoration-color: @red;
+        }        
+    }
+}
+
+
+
+
+
+.listing__article-list {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
 }

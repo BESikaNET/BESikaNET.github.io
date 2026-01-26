@@ -1,5 +1,5 @@
 <!DOCTYPE html> <!-- Указывайте Doctype -->
-<html lang="ru" class="show-event-popup"> <!-- Указывайте язык документа -->
+<html lang="ru"> <!--class="show-event-popup"> --> <!-- Указывайте язык документа -->
   @@include('blocks/head.html')
 
   <body class="body">
@@ -7,7 +7,7 @@
     <main class="main">
       <div class="home">
         @@include('blocks/about.html')
-
+        @@include('blocks/events-list.html')
         <!-- prerrier-ignore -->
         @@include("blocks/block-listing.html", {"class":"home__listing"})
       </div>

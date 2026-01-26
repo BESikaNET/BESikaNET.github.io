@@ -1,5 +1,5 @@
 <!DOCTYPE html> <!-- Указывайте Doctype -->
-<html lang="ru" class="show-event-popup"> <!-- Указывайте язык документа -->
+<html lang="ru"> <!--class="show-event-popup"> --> <!-- Указывайте язык документа -->
 
 <head>
   <meta charset="UTF-8" />
@@ -49,16 +49,34 @@
   <main class="main">
     <div class="home">
       <section class="about">
+        <h2 class="section-title about__title">
+          о нас
+        </h2>
+        <div class="about__info">
+          <h3 class="about__info-title">
+            Проект «Millennials»
+          </h3>
+          <p class="about__info-text">
+            Вдохновлен молодыми идейными людьми, увлеченными творчеством,
+            эмоциями и желанием сделать мир лучше, проявить себя. У них есть
+            талант и стремление, у нас возможность помочь им воплотить их мечту
+            в реальность.
+          </p>
+        </div>
         <div class="about__container">
-          <div class="about__block1"></div>
+          <div class="about__block1">
+
+          </div>
           <div class="about__block2">
             <picture class="about__picture">
+              <source type="image/webp" srcset="assets/images/pic1.webp" />
               <img src="assets/images/pic1.jpg" class="about__img" alt="pic">
             </picture>
             <h3 class="about__title">
               Мы предоставляем площадки для мероприятий
             </h3>
             <picture class="about__picture2">
+              <source type="image/webp" srcset="assets/images/pic2.webp" />
               <img src="assets/images/pic2.jpg" class="about__img" alt="pic2">
             </picture>
             <p class="about__text">
@@ -71,28 +89,183 @@
         </div>
       </section>
 
+      <div class="events">
+        <section class="listing events__listing events__listing--white">
+          <h2 class="listing__section-title section-title">Мероприятия</h2>
+          <div class="listing__events-list">
+            <!-- prerrier-ignore -->
+            <article class="event-card listing__event-card">
+              <a href="#" class="event-card__link">
+                <picture class="event-card__picture">
+                  <source type="image/webp" srcset="assets/images/events/nirvana.webp" />
+                  <img src="assets/images/events/nirvana.jpeg" alt="nirvana" class="event-card__img" />
+                </picture>
+
+                <h4 class="event-card__title">
+                  Собираемся и слушаем альбом Nirvana. Nirvana
+                </h4>
+
+                <p class="event-card__description">
+                  Это третий альбом группы, выпущенный после смер ти Курта Кобейна и первый, содержащий студийный материал.
+                </p>
+
+                <time datetime="2024-12-07T18:00" class="event-card__time">
+                  07.12.2024 | начало 18.00
+                </time>
+              </a>
+            </article>
+            <article class="event-card listing__event-card">
+              <a href="#" class="event-card__link">
+                <picture class="event-card__picture">
+                  <source type="image/webp" srcset="assets/images/events/HowStuffWorks.webp" />
+                  <img src="assets/images/events/HowStuffWorks.jpg" alt="nirvana" class="event-card__img" />
+                </picture>
+
+                <h4 class="event-card__title">
+                  Есть тема, нужно обсудить с HowStuffWorks
+                </h4>
+
+                <p class="event-card__description">
+                  Один из самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные вещи.
+                </p>
+
+                <time datetime="2024-12-14T18:30" class="event-card__time">
+                  14.12.2024 | начало 18.30
+                </time>
+              </a>
+            </article>
+            <article class="event-card listing__event-card">
+              <a href="#" class="event-card__link">
+                <picture class="event-card__picture">
+                  <source type="image/webp" srcset="assets/images/events/HowStuffWorks.webp" />
+                  <img src="assets/images/events/HowStuffWorks.jpg" alt="nirvana" class="event-card__img" />
+                </picture>
+
+                <h4 class="event-card__title">
+                  Есть тема, нужно обсудить с HowStuffWorks
+                </h4>
+
+                <p class="event-card__description">
+                  Один из самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные вещи.
+                </p>
+
+                <time datetime="2024-12-14T18:30" class="event-card__time">
+                  14.12.2024 | начало 18.30
+                </time>
+              </a>
+            </article>
+          </div>
+        </section>
+      </div>
 
       <!-- prerrier-ignore -->
-      <section class="listing home__listing">
-        <h2 class="section-title listing__title">
-          Блог
-        </h2>
-        <div class="listing__article-list">
-          <!-- prerrier-ignore -->
-          @@loop('article-card.html', [
-          {
-          "class": ,
-          "img": ,
-          "alt": ,
-          "title": ,
-          "descr": ,
-          "time": ,
-          "datetime":
-          }
-          ])
-        </div>
-        <a href="#" class="listing__link">смотреть все</a>
-      </section>
+      <div class="listing--white">
+        <section class="listing home__listing">
+          <h2 class="section-title listing__title">
+            Блог
+          </h2>
+          <div class="listing__article-list">
+            <!-- prerrier-ignore -->
+            <article class="article-card listing__artic-card">
+              <a href="#" class="article-card__link">
+                <picture class="article-card__picture">
+                  <source media="max-width: 450px" srcset="assets/images/blog/article.webp" />
+                  <source media="max-width: 450px" srcset="assets/images/blog/article.jpg" />
+
+                  <source type="image/webp" media="max-width: 1169px" srcset="assets/images/blog/article1670.webp" />
+                  <source media="max-width: 1169px" srcset="assets/images/blog/article1670.jpeg" />
+
+                  <source type="image/webp" srcset="assets/images/blog/article.webp" />
+                  <img src="assets/images/blog/article.jpg" alt="nirvana" class="article-card__img" />
+                </picture>
+              </a>
+              <div class="article-card__info">
+                <time datetime="2024-12-07T18:00" class="article-card__time">
+                  07.12.2024
+                </time>
+                <a href="#" class="article-card__title-link">
+                  <h4 class="article-card__title">
+                    Собираемся и слушаем альбом Nirvana. Nirvana
+                  </h4>
+                  <span class="article-card__arrow arrow">
+                    <svg class="article-card__arrow__icon" width="60px" height="60px">
+                      <use xlink:href="assets/icons/symbols.svg#arrow"></use>
+                    </svg>
+                  </span>
+                </a>
+                <p class="article-card__description">
+                  Это третий альбом группы, выпущенный после смер ти Курта Кобейна и первый, содержащий студийный материал.
+                </p>
+              </div>
+            </article>
+            <article class="article-card listing__artic-card">
+              <a href="#" class="article-card__link">
+                <picture class="article-card__picture">
+                  <source media="max-width: 450px" srcset="assets/images/blog/article.webp" />
+                  <source media="max-width: 450px" srcset="assets/images/blog/article.jpg" />
+
+                  <source type="image/webp" media="max-width: 1169px" srcset="assets/images/blog/article1670.webp" />
+                  <source media="max-width: 1169px" srcset="assets/images/blog/article1670.jpeg" />
+
+                  <source type="image/webp" srcset="assets/images/blog/article.webp" />
+                  <img src="assets/images/blog/article.jpg" alt="nirvana" class="article-card__img" />
+                </picture>
+              </a>
+              <div class="article-card__info">
+                <time datetime="2024-12-07T18:00" class="article-card__time">
+                  07.12.2024
+                </time>
+                <a href="#" class="article-card__title-link">
+                  <h4 class="article-card__title">
+                    Собираемся и слушаем альбом Nirvana. Nirvana
+                  </h4>
+                  <span class="article-card__arrow arrow">
+                    <svg class="article-card__arrow__icon" width="60px" height="60px">
+                      <use xlink:href="assets/icons/symbols.svg#arrow"></use>
+                    </svg>
+                  </span>
+                </a>
+                <p class="article-card__description">
+                  Это третий альбом группы, выпущенный после смер ти Курта Кобейна и первый, содержащий студийный материал.
+                </p>
+              </div>
+            </article>
+            <article class="article-card listing__artic-card">
+              <a href="#" class="article-card__link">
+                <picture class="article-card__picture">
+                  <source media="max-width: 450px" srcset="assets/images/blog/article.webp" />
+                  <source media="max-width: 450px" srcset="assets/images/blog/article.jpg" />
+
+                  <source type="image/webp" media="max-width: 1169px" srcset="assets/images/blog/article1670.webp" />
+                  <source media="max-width: 1169px" srcset="assets/images/blog/article1670.jpeg" />
+
+                  <source type="image/webp" srcset="assets/images/blog/article.webp" />
+                  <img src="assets/images/blog/article.jpg" alt="nirvana" class="article-card__img" />
+                </picture>
+              </a>
+              <div class="article-card__info">
+                <time datetime="2024-12-07T18:00" class="article-card__time">
+                  07.12.2024
+                </time>
+                <a href="#" class="article-card__title-link">
+                  <h4 class="article-card__title">
+                    Собираемся и слушаем альбом Nirvana. Nirvana
+                  </h4>
+                  <span class="article-card__arrow arrow">
+                    <svg class="article-card__arrow__icon" width="60px" height="60px">
+                      <use xlink:href="assets/icons/symbols.svg#arrow"></use>
+                    </svg>
+                  </span>
+                </a>
+                <p class="article-card__description">
+                  Это третий альбом группы, выпущенный после смер ти Курта Кобейна и первый, содержащий студийный материал.
+                </p>
+              </div>
+            </article>
+          </div>
+          <a href="#" class="listing__link">Cмотреть все</a>
+        </section>
+      </div>
     </div>
   </main>
   <footer class="page-footer">

@@ -1,4 +1,6 @@
 .about {
+    padding-bottom: 75px;
+    
     &__container {
         .container();
     }
@@ -8,24 +10,122 @@
         grid-template-columns: 1fr 406px;
         gap: 90px 65px;
         grid-template-areas: 
-        "pic pic2"
-        "title pic2"
-        "text text";
+            "pic pic2"
+            "title pic2"
+            "text text";
+        
+        // Адаптация для ширины 1340px и меньше
+        @media @bw1340 {
+            grid-template-columns: 1fr 350px;
+            gap: 70px 50px;
+        }
+        
+        // Адаптация для ширины 1024px и меньше
+        @media @bw1020 {
+            grid-template-columns: 1fr 300px;
+            gap: 60px 40px;
+        }
+        
+        // Адаптация для ширины 768px и меньше (планшеты)
+        @media @bw768 {
+            grid-template-columns: 1fr 250px;
+            gap: 40px 30px;
+            grid-template-areas: 
+                "pic "
+                "title pic2"
+                "text pic2";
+        }
+        
+        // Адаптация для ширины 600px и меньше
+        @media (max-width: 600px) {
+            grid-template-columns: 1fr 200px;
+            gap: 30px 25px;
+        }
+        
+        // Адаптация для ширины 400px и меньше (мобильные)
+        @media @bw400 {
+            grid-template-columns: 1fr;
+            gap: 30px;
+            grid-template-areas: 
+                "pic"
+                "title"
+                "text"
+                "pic2";
+        }
+        
+        // Адаптация для очень маленьких экранов
+        @media (max-width: 360px) {
+            gap: 25px;
+        }
     }
 
     &__picture {
         grid-area: pic;
+        
+        // Адаптация для мобильных
+        @media @bw400 {
+            width: 100%;
+            max-width: 100%;
+        }
     }
 
     &__title {
         grid-area: title;
         font-size: 44px;
         font-weight: 700;
+        
+        // Адаптация для ширины 1340px и меньше
+        @media @bw1340 {
+            font-size: 40px;
+        }
+        
+        // Адаптация для ширины 1024px и меньше
+        @media @bw1020 {
+            font-size: 36px;
+        }
+        
+        // Адаптация для ширины 768px и меньше
+        @media @bw768 {
+            font-size: 32px;
+        }
+        
+        // Адаптация для ширины 600px и меньше
+        @media (max-width: 600px) {
+            font-size: 28px;
+        }
+        
+        // Адаптация для ширины 400px и меньше
+        @media @bw400 {
+            font-size: 26px;
+        }
+        
+        // Адаптация для очень маленьких экранов
+        @media (max-width: 360px) {
+            font-size: 24px;
+        }
     }
 
     &__picture2 {
         grid-area: pic2;
         align-self: flex-end;
+        
+        // Адаптация для планшетов
+        @media @bw768 {
+            align-self: center;
+        }
+        
+        // Адаптация для мобильных (400px и меньше)
+        @media @bw400 {
+            align-self: center;
+            justify-self: center;
+            max-width: 250px;
+            margin: 0 auto;
+        }
+        
+        // Адаптация для очень маленьких экранов
+        @media (max-width: 360px) {
+            max-width: 200px;
+        }
     }
 
     &__text {
@@ -33,12 +133,196 @@
         margin: 0 80px 0 auto;
         max-width: 870px;
         width: 100%;
-
         font-family: desk;
         font: Open Sans;
         font-size: 20px;
         line-height: 25px;
         letter-spacing: 0%;
-        text-align: align left;
+        text-align: left;
+        
+        // Адаптация для ширины 1340px и меньше
+        @media @bw1340 {
+            margin: 0 60px 0 auto;
+            font-size: 18px;
+            line-height: 24px;
+        }
+        
+        // Адаптация для ширины 1024px и меньше
+        @media @bw1020 {
+            margin: 0 40px 0 auto;
+            font-size: 17px;
+            line-height: 23px;
+        }
+        
+        // Адаптация для ширины 768px и меньше
+        @media @bw768 {
+            margin: 0 0 0 auto;
+            max-width: calc(100% - 280px); // Учитываем ширину picture2 + gap
+            font-size: 16px;
+            line-height: 22px;
+        }
+        
+        // Адаптация для ширины 600px и меньше
+        @media (max-width: 600px) {
+            max-width: calc(100% - 230px); // Учитываем ширину picture2 + gap
+            font-size: 15px;
+            line-height: 21px;
+        }
+        
+        // Адаптация для ширины 400px и меньше
+        @media @bw400 {
+            margin: 0;
+            max-width: 100%;
+            font-size: 15px;
+            line-height: 21px;
+        }
+        
+        // Адаптация для очень маленьких экранов
+        @media (max-width: 360px) {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+    
+    &__info {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 1414px;
+        margin: 0 auto;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 100px;
+        
+        @media @bw1340 {
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 80px;
+        }
+        
+        @media @bw1020 {
+            padding-bottom: 70px;
+        }
+        
+        @media @bw768 {
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 60px;
+        }
+        
+        @media @bw400 {
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 50px;
+        }
+        
+        @media (max-width: 360px) {
+            padding-left: 12px;
+            padding-right: 12px;
+            padding-bottom: 40px;
+        }
+    }
+    
+    &__info-title {
+        font-size: 44px;
+        font-weight: 700;
+        max-width: 50%;
+        margin-left: 0;
+        
+        // Адаптация для ширины 1340px и меньше
+        @media @bw1340 {
+            font-size: 40px;
+            max-width: 55%;
+        }
+        
+        // Адаптация для ширины 1024px и меньше
+        @media @bw1020 {
+            font-size: 36px;
+            max-width: 60%;
+        }
+        
+        // Адаптация для ширины 768px и меньше
+        @media @bw768 {
+            font-size: 32px;
+            max-width: 70%;
+        }
+        
+        // Адаптация для ширины 600px и меньше
+        @media (max-width: 600px) {
+            font-size: 28px;
+            max-width: 80%;
+        }
+        
+        // Адаптация для ширины 400px и меньше
+        @media @bw400 {
+            font-size: 26px;
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        // Адаптация для очень маленьких экранов
+        @media (max-width: 360px) {
+            font-size: 24px;
+        }
+    }
+
+    &__info-text {
+        margin-left: auto;
+        max-width: 870px;
+        font-size: 18px;
+        font-weight: 400;
+        
+        // Адаптация для ширины 1340px и меньше
+        @media @bw1340 {
+            max-width: 800px;
+            font-size: 17px;
+            line-height: 22px;
+        }
+        
+        // Адаптация для ширины 1024px и меньше
+        @media @bw1020 {
+            max-width: 700px;
+            font-size: 16px;
+            line-height: 22px;
+        }
+        
+        // Адаптация для ширины 768px и меньше
+        @media @bw768 {
+            max-width: 600px;
+            font-size: 16px;
+            line-height: 22px;
+        }
+        
+        // Адаптация для ширины 600px и меньше
+        @media (max-width: 600px) {
+            max-width: 550px;
+            font-size: 15px;
+            line-height: 21px;
+        }
+        
+        // Адаптация для ширины 400px и меньше
+        @media @bw400 {
+            margin-left: 0;
+            max-width: 100%;
+            font-size: 15px;
+            line-height: 21px;
+        }
+        
+        // Адаптация для очень маленьких экранов
+        @media (max-width: 360px) {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+    
+    // Адаптация для ширины 600px и меньше - корректировка расположения picture2
+    @media (max-width: 600px) {
+        &__block2 {
+            position: relative;
+        }
+        
+        &__picture2 {
+            position: relative;
+            margin-top: 10px;
+        }
     }
 }

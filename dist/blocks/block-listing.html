@@ -1,20 +1,107 @@
-<section class="listing @@class">
-  <h2 class="section-title listing__title">
-    Блог
-  </h2>
-  <div class="listing__article-list">
-    <!-- prerrier-ignore -->
-    @@loop('article-card.html', [
-    {
-    "class": ,
-    "img": ,
-    "alt": ,
-    "title": ,
-    "descr": ,
-    "time": ,
-    "datetime":
-    }
-    ])
-  </div>
-  <a href="#" class="listing__link">смотреть все</a>
-</section>
+<div class="listing--white">
+  <section class="listing @@class">
+    <h2 class="section-title listing__title">
+      Блог
+    </h2>
+    <div class="listing__article-list">
+      <!-- prerrier-ignore -->
+      <article class="article-card listing__artic-card">
+        <a href="#" class="article-card__link">
+          <picture class="article-card__picture">
+            <source media="max-width: 450px" srcset="assets/images/blog/article.webp" />
+            <source media="max-width: 450px" srcset="assets/images/blog/article.jpg" />
+
+            <source type="image/webp" media="max-width: 1169px" srcset="assets/images/blog/article1670.webp" />
+            <source media="max-width: 1169px" srcset="assets/images/blog/article1670.jpeg" />
+
+            <source type="image/webp" srcset="assets/images/blog/article.webp" />
+            <img src="assets/images/blog/article.jpg" alt="nirvana" class="article-card__img" />
+          </picture>
+        </a>
+        <div class="article-card__info">
+          <time datetime="2024-12-07T18:00" class="article-card__time">
+            07.12.2024
+          </time>
+          <a href="#" class="article-card__title-link">
+            <h4 class="article-card__title">
+              Собираемся и слушаем альбом Nirvana. Nirvana
+            </h4>
+            <span class="article-card__arrow arrow">
+              <svg class="article-card__arrow__icon" width="60px" height="60px">
+                <use xlink:href="assets/icons/symbols.svg#arrow"></use>
+              </svg>
+            </span>
+          </a>
+          <p class="article-card__description">
+            Это третий альбом группы, выпущенный после смер ти Курта Кобейна и первый, содержащий студийный материал.
+          </p>
+        </div>
+      </article>
+      <article class="article-card listing__artic-card">
+        <a href="#" class="article-card__link">
+          <picture class="article-card__picture">
+            <source media="max-width: 450px" srcset="assets/images/blog/article.webp" />
+            <source media="max-width: 450px" srcset="assets/images/blog/article.jpg" />
+
+            <source type="image/webp" media="max-width: 1169px" srcset="assets/images/blog/article1670.webp" />
+            <source media="max-width: 1169px" srcset="assets/images/blog/article1670.jpeg" />
+
+            <source type="image/webp" srcset="assets/images/blog/article.webp" />
+            <img src="assets/images/blog/article.jpg" alt="nirvana" class="article-card__img" />
+          </picture>
+        </a>
+        <div class="article-card__info">
+          <time datetime="2024-12-07T18:00" class="article-card__time">
+            07.12.2024
+          </time>
+          <a href="#" class="article-card__title-link">
+            <h4 class="article-card__title">
+              Собираемся и слушаем альбом Nirvana. Nirvana
+            </h4>
+            <span class="article-card__arrow arrow">
+              <svg class="article-card__arrow__icon" width="60px" height="60px">
+                <use xlink:href="assets/icons/symbols.svg#arrow"></use>
+              </svg>
+            </span>
+          </a>
+          <p class="article-card__description">
+            Это третий альбом группы, выпущенный после смер ти Курта Кобейна и первый, содержащий студийный материал.
+          </p>
+        </div>
+      </article>
+      <article class="article-card listing__artic-card">
+        <a href="#" class="article-card__link">
+          <picture class="article-card__picture">
+            <source media="max-width: 450px" srcset="assets/images/blog/article.webp" />
+            <source media="max-width: 450px" srcset="assets/images/blog/article.jpg" />
+
+            <source type="image/webp" media="max-width: 1169px" srcset="assets/images/blog/article1670.webp" />
+            <source media="max-width: 1169px" srcset="assets/images/blog/article1670.jpeg" />
+
+            <source type="image/webp" srcset="assets/images/blog/article.webp" />
+            <img src="assets/images/blog/article.jpg" alt="nirvana" class="article-card__img" />
+          </picture>
+        </a>
+        <div class="article-card__info">
+          <time datetime="2024-12-07T18:00" class="article-card__time">
+            07.12.2024
+          </time>
+          <a href="#" class="article-card__title-link">
+            <h4 class="article-card__title">
+              Собираемся и слушаем альбом Nirvana. Nirvana
+            </h4>
+            <span class="article-card__arrow arrow">
+              <svg class="article-card__arrow__icon" width="60px" height="60px">
+                <use xlink:href="assets/icons/symbols.svg#arrow"></use>
+              </svg>
+            </span>
+          </a>
+          <p class="article-card__description">
+            Это третий альбом группы, выпущенный после смер ти Курта Кобейна и первый, содержащий студийный материал.
+          </p>
+        </div>
+      </article>
+    </div>
+    <a href="#" class="listing__link">Cмотреть все</a>
+  </section>
+</div>

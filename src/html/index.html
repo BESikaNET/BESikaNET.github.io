@@ -1,19 +1,32 @@
 <!DOCTYPE html> <!-- Указывайте Doctype -->
-<html lang="ru"> <!--class="show-event-popup"> --> <!-- Указывайте язык документа -->
+<html lang="ru" > <!--class="show-event-popup"> --> <!-- Указывайте язык документа -->
   @@include('blocks/head.html')
 
   <body class="body">
     @@include('blocks/page-header.html')
     <main class="main">
       <div class="home">
+        <!-- prerrier-ignore -->
+        @@include('blocks/offers.html')
+        <!-- prerrier-ignore -->
         @@include('blocks/about.html')
-        @@include('blocks/events-list.html')
+        <!-- prerrier-ignore -->
+        @@include('blocks/upcoming.html')
         <!-- prerrier-ignore -->
         @@include("blocks/block-listing.html", {"class":"home__listing"})
+        <!-- prerrier-ignore -->
+        @@include("blocks/contacts.html", {"class":"home__contacts"})
       </div>
     </main>
     @@include('blocks/page-footer.html')
     @@include('blocks/event-pp.html')
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key="></script>
+
+    <script src="scripts/swiper.min.js"></script>
+
+    <script src="scripts/main.min.js"></script>
+    
   </body>
 
 </html>

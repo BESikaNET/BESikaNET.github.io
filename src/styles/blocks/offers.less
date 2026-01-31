@@ -1,0 +1,120 @@
+.offers {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1414px;
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 100px;
+    @media @bw1340 {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    @media @bw768 {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    gap: 0px;
+    flex-direction: column;
+    position: relative;
+    
+    &__title {
+        font-family: 'Lora', serif;
+        font-size: 45px;
+        font-weight: 400;
+        line-height: 58px;
+        letter-spacing: 0;
+        text-align: center;
+        text-transform: uppercase;
+        padding-bottom: 70px;
+        @media @bw600 {
+            padding-top: 50px;
+            font-size: 24px;
+            line-height: 17px;
+        }
+    }
+
+    &__img {
+        width: 8000px;
+    }
+    
+    &__logo {
+        width: 100vw;
+        height: auto;
+    }
+    
+    &__slogan {
+        max-width: 990px;
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    
+    &__slogan-text {
+        font-family: 'Lora', serif;
+        font-size: 45px;
+        font-weight: 400;
+        line-height: 58px;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        text-transform: uppercase;
+        @media @bw600 {
+            font-size: 24px;
+            line-height: 38px;
+        }
+    }
+
+    &__suggest {
+        width: 624px;
+        @media @bw1020 {
+            width: 580px;
+        }
+        @media @bw600 {
+            width: 100%; // на маленьких экранах занимает всю ширину
+        }
+    }
+    
+    &__suggest-title {
+        font-family: 'Lora', serif;
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 17px;
+        text-align: center;
+        text-transform: uppercase;
+        padding-bottom: 46px;
+        @media @bw600 {
+            font-size: 24px;
+            line-height: 17px;
+        }
+    }
+    
+    &__suggest-btn {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        gap: 80px;
+        @media @bw1020 {
+            gap: 30px;            
+        }
+        @media @bw600 {
+            flex-direction: column; // кнопки в столбик
+            gap: 20px; // уменьшаем расстояние между кнопками
+        }
+    }
+    
+    &__btn {
+        flex: 1;
+        max-width: calc(50% - 40px);
+        @media @bw1020 {
+            max-width: calc(50% - 15px); // 15px = половина от gap 30px         
+        }
+        @media @bw600 {
+            flex: none; // отменяем flex: 1
+            max-width: 100%; // кнопки на всю ширину
+            width: 100%; // на всякий случай
+        }
+    }
+}

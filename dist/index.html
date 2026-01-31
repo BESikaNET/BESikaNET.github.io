@@ -42,12 +42,43 @@
             <use xlink:href="assets/icons/symbols.svg#user">
           </svg>
         </a>
-        <button type="button" class="page-header__nav-toggle"></button>
+        <button type="button" class="page-header__nav-toggle" id="js-navToggle"></button>
       </div>
     </div>
   </header>
   <main class="main">
     <div class="home">
+      <!-- prerrier-ignore -->
+      <section class="offers">
+        <h2 class="offers__title">
+          Арт - пространство
+        </h2>
+        <picture class="offers__logo">
+          <source type="image/webp" srcset="assets/images/offers/LENNI.webp" />
+          <img src="assets/images/offers/LENNI.png" class="offers__img" alt="pic">
+        </picture>
+
+        <div class="offers__slogan">
+          <h3 class="offers__slogan-text">Для людей, горящих сердцем и делом </h3>
+          <h3 class="offers__slogan-text">Место для настоящего</h3>
+        </div>
+
+
+        <section class="offers__suggest">
+          <h2 class="offers__suggest-title">я хочу:</h2>
+          <div class="offers__suggest-btn">
+            <button class="offers__btn btn btn--red" type="button" id="js-eventOpenBtn">
+              Провести мероприятие
+            </button>
+
+            <button class="offers__btn btn" type="button">
+              Стать арендатором
+            </button>
+          </div>
+        </section>
+      </section>
+
+      <!-- prerrier-ignore -->
       <section class="about">
         <h2 class="section-title about__title">
           о нас
@@ -89,75 +120,144 @@
         </div>
       </section>
 
-      <div class="events">
-        <section class="listing events__listing events__listing--white">
-          <h2 class="listing__section-title section-title">Мероприятия</h2>
-          <div class="listing__events-list">
-            <!-- prerrier-ignore -->
-            <article class="event-card listing__event-card">
-              <a href="#" class="event-card__link">
-                <picture class="event-card__picture">
-                  <source type="image/webp" srcset="assets/images/events/nirvana.webp" />
-                  <img src="assets/images/events/nirvana.jpeg" alt="nirvana" class="event-card__img" />
-                </picture>
+      <!-- prerrier-ignore -->
+      <section class="upcoming @@class">
+        <div class="upcoming__wrapper">
+          <div class="upcoming__container">
+            <h2 class="upcoming__title section-title">Мероприятия</h2>
+            <div class="upcoming__swiper swiper swiper--3s js-swiper">
+              <!-- Swiper использует класс swiper-wrapper -->
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <article class="event-card ">
+                    <a href="#" class="event-card__link">
+                      <picture class="event-card__picture">
+                        <source type="image/webp" srcset="assets/images/events/nirvana.webp" />
+                        <img src="assets/images/events/nirvana.jpeg" alt="nirvana" class="event-card__img" />
+                      </picture>
 
-                <h4 class="event-card__title">
-                  Собираемся и слушаем альбом Nirvana. Nirvana
-                </h4>
+                      <h4 class="event-card__title">
+                        1/ Собираемся и слушаем альбом Nirvana. Nirvana
+                      </h4>
 
-                <p class="event-card__description">
-                  Это третий альбом группы, выпущенный после смер ти Курта Кобейна и первый, содержащий студийный материал.
-                </p>
+                      <p class="event-card__description">
+                        Это третий альбом группы, выпущенный после смер ти Курта Кобейна и первый, содержащий студийный материал.
+                      </p>
 
-                <time datetime="2024-12-07T18:00" class="event-card__time">
-                  07.12.2024 | начало 18.00
-                </time>
-              </a>
-            </article>
-            <article class="event-card listing__event-card">
-              <a href="#" class="event-card__link">
-                <picture class="event-card__picture">
-                  <source type="image/webp" srcset="assets/images/events/HowStuffWorks.webp" />
-                  <img src="assets/images/events/HowStuffWorks.jpg" alt="nirvana" class="event-card__img" />
-                </picture>
+                      <time datetime="2024-12-07T18:00" class="event-card__time">
+                        07.12.2024 | начало 18.00
+                      </time>
+                    </a>
+                  </article>
+                </div>
+                <div class="swiper-slide">
+                  <article class="event-card ">
+                    <a href="#" class="event-card__link">
+                      <picture class="event-card__picture">
+                        <source type="image/webp" srcset="assets/images/events/HowStuffWorks.webp" />
+                        <img src="assets/images/events/HowStuffWorks.jpg" alt="fdasdsa" class="event-card__img" />
+                      </picture>
 
-                <h4 class="event-card__title">
-                  Есть тема, нужно обсудить с HowStuffWorks
-                </h4>
+                      <h4 class="event-card__title">
+                        2, Есть тема, нужно обсудить с HowStuffWorks
+                      </h4>
 
-                <p class="event-card__description">
-                  Один из самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные вещи.
-                </p>
+                      <p class="event-card__description">
+                        Один из самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные вещи.
+                      </p>
 
-                <time datetime="2024-12-14T18:30" class="event-card__time">
-                  14.12.2024 | начало 18.30
-                </time>
-              </a>
-            </article>
-            <article class="event-card listing__event-card">
-              <a href="#" class="event-card__link">
-                <picture class="event-card__picture">
-                  <source type="image/webp" srcset="assets/images/events/HowStuffWorks.webp" />
-                  <img src="assets/images/events/HowStuffWorks.jpg" alt="nirvana" class="event-card__img" />
-                </picture>
+                      <time datetime="2024-12-14T18:30" class="event-card__time">
+                        14.12.2024 | начало 18.30
+                      </time>
+                    </a>
+                  </article>
+                </div>
+                <div class="swiper-slide">
+                  <article class="event-card ">
+                    <a href="#" class="event-card__link">
+                      <picture class="event-card__picture">
+                        <source type="image/webp" srcset="assets/images/events/nirvana.webp" />
+                        <img src="assets/images/events/nirvana.jpeg" alt="nirvana" class="event-card__img" />
+                      </picture>
 
-                <h4 class="event-card__title">
-                  Есть тема, нужно обсудить с HowStuffWorks
-                </h4>
+                      <h4 class="event-card__title">
+                        3/ Собираемся и слушаем альбом Nirvana. Nirvana
+                      </h4>
 
-                <p class="event-card__description">
-                  Один из самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные вещи.
-                </p>
+                      <p class="event-card__description">
+                        Это третий альбом группы, выпущенный после смер ти Курта Кобейна и первый, содержащий студийный материал.
+                      </p>
 
-                <time datetime="2024-12-14T18:30" class="event-card__time">
-                  14.12.2024 | начало 18.30
-                </time>
-              </a>
-            </article>
+                      <time datetime="2024-12-07T18:00" class="event-card__time">
+                        07.12.2024 | начало 18.00
+                      </time>
+                    </a>
+                  </article>
+                </div>
+                <div class="swiper-slide">
+                  <article class="event-card ">
+                    <a href="#" class="event-card__link">
+                      <picture class="event-card__picture">
+                        <source type="image/webp" srcset="assets/images/events/HowStuffWorks.webp" />
+                        <img src="assets/images/events/HowStuffWorks.jpg" alt="fdasdsa" class="event-card__img" />
+                      </picture>
+
+                      <h4 class="event-card__title">
+                        4. Есть тема, нужно обсудить с HowStuffWorks
+                      </h4>
+
+                      <p class="event-card__description">
+                        Один из самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные вещи.
+                      </p>
+
+                      <time datetime="2024-12-14T18:30" class="event-card__time">
+                        14.12.2024 | начало 18.30
+                      </time>
+                    </a>
+                  </article>
+                </div>
+                <div class="swiper-slide">
+                  <article class="event-card ">
+                    <a href="#" class="event-card__link">
+                      <picture class="event-card__picture">
+                        <source type="image/webp" srcset="assets/images/events/HowStuffWorks.webp" />
+                        <img src="assets/images/events/HowStuffWorks.jpg" alt="fdasdsa" class="event-card__img" />
+                      </picture>
+
+                      <h4 class="event-card__title">
+                        5. Есть тема, нужно обсудить с HowStuffWorks
+                      </h4>
+
+                      <p class="event-card__description">
+                        Один из СТРАННЫЪХ ТЕКСТОВ самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные вещи.
+                      </p>
+
+                      <time datetime="2024-12-14T18:30" class="event-card__time">
+                        14.12.2024 | начало 18.30
+                      </time>
+                    </a>
+                  </article>
+                </div>
+              </div>
+
+              <!-- Пагинация и навигация -->
+              <div class="swiper-footer">
+                <button type="button" class="swiper-arrow-prev arrow arrow-left">
+                  <svg class="arrow__icon" width="91" height="60">
+                    <use xlink:href="assets/icons/symbols.svg#arrow"></use>
+                  </svg>
+                </button>
+                <div class="swiper-pagination"></div>
+                <button type="button" class="swiper-arrow-next arrow">
+                  <svg class="arrow__icon" width="91" height="60">
+                    <use xlink:href="assets/icons/symbols.svg#arrow"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
           </div>
-        </section>
-      </div>
-
+        </div>
+      </section>
       <!-- prerrier-ignore -->
       <div class="listing--white">
         <section class="listing home__listing">
@@ -266,6 +366,47 @@
           <a href="#" class="listing__link">Cмотреть все</a>
         </section>
       </div>
+      <!-- prerrier-ignore -->
+      <section class="contacts">
+        <h2 class="contacts__title section-title">Контакты</h2>
+        <div class="contacts__container">
+          <div class="contacts__wrapper">
+            <ul class="contacts__list">
+              <li class="contacts__item">
+                <div class="contacts__item-mark">
+                  <img class="contacts__item-icon" src="assets/images/contacts/dot.jpg" alt="Местоположение" width="110" height="110">
+                </div>
+                <div class="contacts__item-content">
+                  <h4 class="contacts__item-title">Томск, Красноармейская 146</h4>
+                  <div class="contacts__item-info">2 этаж</div>
+                  <div class="contacts__item-info">оф. 206</div>
+                </div>
+              </li>
+              <li class="contacts__item">
+                <div class="contacts__item-mark">
+                  <img class="contacts__item-icon" src="assets/images/contacts/home.jpg" alt="Отдел аренды" width="110" height="110">
+                </div>
+                <div class="contacts__item-content">
+                  <h4 class="contacts__item-title">Отдел аренды</h4>
+                  <div class="contacts__item-info">8 (1556) 21-21-21</div>
+                  <div class="contacts__item-info">idat@tusur.ru</div>
+                </div>
+              </li>
+              <li class="contacts__item">
+                <div class="contacts__item-mark">
+                  <img class="contacts__item-icon" src="assets/images/contacts/star.jpg" alt="Отдел мероприятий" width="110" height="110">
+                </div>
+                <div class="contacts__item-content">
+                  <h4 class="contacts__item-title">Отдел мероприятий</h4>
+                  <div class="contacts__item-info">8 (1556) 21-21-21</div>
+                  <div class="contacts__item-info">idat@tusur.ru</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="contacts__map" id="js-contactsMap"></div>
+        </div>
+      </section>
     </div>
   </main>
   <footer class="page-footer">
@@ -277,10 +418,10 @@
       <a href="#">Контакты</a>
     </div>
   </footer>
-  <div class="pp" id="eventPP">
+  <div class="pp" id="js-eventPP">
     <div class="pp__wrapper">
       <div class="pp__sticky-close">
-        <button type="button" class="pp__x-btn x-btn">
+        <button type="button" title="Закрыть" class="pp__x-btn x-btn js-ppCloseBtn">
           <svg class="x-btn__icon" width="20" height="20">
             <use xlink:href="assets/icons/symbols.svg#x"></use>
           </svg>
@@ -394,7 +535,7 @@
             <button type="submit" class="btn form__submit">
               Отправить
             </button>
-            <button type="button" class="form__close-btn">
+            <button type="button" class="form__close-btn js-ppCloseBtn">
               Закрыть
             </button>
           </div>
@@ -403,6 +544,13 @@
       </div>
     </div>
   </div>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key="></script>
+
+  <script src="scripts/swiper.min.js"></script>
+
+  <script src="scripts/main.min.js"></script>
+
 </body>
 
 </html>

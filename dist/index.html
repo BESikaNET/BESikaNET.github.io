@@ -5,10 +5,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user=scalable=no">
   <title>Lenni Art</title>
+
+  <meta property="og:title" content="Lenni Art" />
+  <meta property="og:description" content="Арт пространство для людей, горящих сердцем и делом" />
+  <meta property="og:image" content="/assets/images/lenni-art.jpg">
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lenni-art.ru/" />
+
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles/styles.css">
+
+  <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96" />
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/assets/favicons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+
+  <meta name="msapplication-TileColor" content="#dedede">
+  <meta name="msapplication-TileImage" content="/assets/favicons/ms-icon-144x144.png">
+  <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
+
+
+  <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#bc3324">
+
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicons/android-icon-192x192.png">
+  <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
+  <meta name="apple-mobile-web-app-title" content="Stranger-SITE">
+  <meta name="application-name" content="Stranger-SITE">
+
+  <meta name="theme-color" content="#dedede">
 </head>
 
 
@@ -433,7 +467,7 @@
           <br />
           и мы подберём площадку
         </h2>
-        <form class="pp__form form">
+        <form class="pp__form form" id="js-eventForm">
 
           <div class="form__list">
             <div class="field form__field form__field--w50">
@@ -469,7 +503,7 @@
                 <span class="field__title">
                   Планируемое количество посетителей
                 </span>
-                <select class="field__select" name="amount">
+                <select class="field__select js-selectric" name="amount">
                   <option value="20">до 20 человек</option>
                   <option value="100">от 20 до 100 человек</option>
                   <option value="500">от 100 до 500 человек</option>
@@ -477,16 +511,19 @@
                 </select>
               </label>
 
-              <div class="field form__field form__field--m0">
+              <div class="field form__field form__field--m0 js-dateField">
                 <h5 class="field__title">
                   Дата проведения
                 </h5>
                 <div class="field__date">
                   <div class="field__date-inputs">
-                    <input class="field__date-input" type="text" placeholder="ДД">
-                    <input class="field__date-input" type="text" placeholder="ММ">
-                    <input class="field__date-input field__date-input--year" type="text" placeholder="ГГГГ">
+                    <input class="field__date-input js-dateDay" type="text" placeholder="ДД" readonly>
+                    <input class="field__date-input js-dateMonth" type="text" placeholder="ММ" readonly>
+                    <input class="field__date-input field__date-input--year js-dateYear" type="text" placeholder="ГГГГ" readonly>
                   </div>
+
+                  <input class="field__date-picker js-dateInput" type="text" name="date" readonly required>
+
                 </div>
               </div>
             </div>
@@ -507,7 +544,7 @@
             </label>
             <label class="field form__field form__field--w50">
               <span class="field__label">Телефон*</span>
-              <input class="field__input" type="tel" name="phone" placeholder="Телефон" required>
+              <input class="field__input js-mobileMask" type="tel" name="phone" placeholder="Телефон" required>
             </label>
             <label class="field form__field form__field--w50">
               <span class="field__label">Email*</span>
@@ -544,6 +581,14 @@
       </div>
     </div>
   </div>
+
+  <script src="scripts/jquery-3.7.1.min.js"></script>
+  <script src="scripts/jquery.selectric.js">  </script>
+  <script src="scripts/jquery.mask.js">  </script>
+  <script src="scripts/air-datepicker.js">  </script>
+
+  <script src="scripts/jquery.validate.js">  </script>
+  <script src="scripts/jquery.validate-init.js">  </script>
 
   <script src="https://maps.googleapis.com/maps/api/js?key="></script>
 

@@ -4,112 +4,116 @@
     <body class="body">
         @@include('blocks/page-header.html')
 
-  <main class="main">
-  <!-- Здесь будут хлебные крошки -->
+      <main class="main">
+      <!-- Здесь будут хлебные крошки -->
 
-  <article class="event">
-    <!-- Здесь пропущенное содержимое страницы -->
+      <article class="event">
+        <!-- Здесь пропущенное содержимое страницы -->
+        
+        <div class="event__content content">
+          <h5>
+            Программа мероприятия
+          </h5>
+          <ul>
+            <li>20:15 — Приветствие гостей</li>
+            <li>20:30 — Первая подача блюд | Салаты</li>
+            <li>20:40 — Живой вокал | Композиции 1-3</li>
+            <li>21:20 — Подача горячих блюд</li>
+            <li>21:30 — Живой вокал | Композиции 4-7</li>
+            <li>22:15 — Подача десерта</li>
+            <li>22:30 — Живой вокал | Композиции 8-9</li>
+            <li>23:00 — Завершение вечера</li>
+          </ul>
+          <h5>The Best Of Sade</h5>
+          <p>Первый альбом-компиляция Sade, выпущенный в 1994 году. 
+            Он содержит 9 треков, включая самые популярные хиты группы, 
+            раритеты и их любимые треки. 
+          </p>
+          <p>Группа продемонстрировала необычайное долголетие и 
+              креативность своей творческой карьеры.
+              Она лидировала музыкальных чартах с 1994 по 1995 год, став четырехкратно 
+              платиновой в США и продав более 2 миллионов копий в Европе.
+          </p>
+          <ol>
+            <li>Your Love Is King</li>
+            <li>Hang On To Your Love</li>
+            <li>Smooth Operator</li>
+            <li>Jezebel</li>
+            <li>The Sweetest Taboo</li>
+            <li>Is It A Crime</li>
+            <li>Never As Good As The First Time</li>
+            <li>Love Is Stronger Than Pride</li>
+            <li>Paradise</li>
+          </ol>
+
+        </div>
+
+        <form class="reserve event__reserve">
+        
+          <div class="reserve__checks" style="grid-area: checks;">
+            <h4 class="reserve__checks-title">Забронировать столик</h4>
+            <ul class="reserve__checks-list">
+              <li class="reserve__checks-item reserve__checks-item--checked">1 стол</li>
+              <li class="reserve__checks-item">2 стол</li>
+              <li class="reserve__checks-item">3 стол</li>
+              <li class="reserve__checks-item">4 стол</li>
+              <li class="reserve__checks-item">5 стол</li>
+              <li class="reserve__checks-item">6 стол</li>
+              <li class="reserve__checks-item reserve__checks-item--checked">7 стол</li>
+              <li class="reserve__checks-item">8 стол</li>
+              <li class="reserve__checks-item">9 стол</li>
+              <li class="reserve__checks-item reserve__checks-item--checked">10 стол</li>
+              <li class="reserve__checks-item">11 стол</li>
+            </ul>
+          </div>
+        
+
+
+        <div class="reserve__scheme" style="grid-area: scheme;">
+          <div class="reserve__scheme-wrapper">
+            <div class="reserve__scene-label">сцена</div>
+            <img src="assets\images\map.svg" alt="Схема столов" class="reserve__scheme-image">
+          </div>
+        </div>
+
+        <div class="reserve__order" style="grid-area: order;">Оформление заказа</div>
+
+
+        <div class="reserve__legend" style="grid-area: legend;">
+          <h4 class="reserve__title">Стоимость пригласительного билета</h4>
+          <ul class="reserve__price-list">
+            <li class="reserve__price-item">
+              <span class="reserve__badge reserve__badge--red-square"></span>
+              <span>1400 ₽ | 1 персона</span>
+            </li>
+            <li class="reserve__price-item">
+              <span class="reserve__badge reserve__badge--black-square"></span>
+              <span>1250 ₽ | 1 персона</span>
+            </li>
+          </ul>
+          
+          <div class="reserve__note">
+            <h5 class="reserve__note-title">Примечание</h5>
+            <ul class="reserve__note-list">
+              <li class="reserve__note-item">
+                <span class="reserve__badge reserve__badge--double-ring"></span>
+                <span>доступные места</span>
+              </li>
+              <li class="reserve__note-item">
+                <span class="reserve__badge reserve__badge--gray-circle"></span>
+                <span>забронировано</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </form>
+      </article>
+    </main>
+    <script src="scripts/jquery-3.7.1.min.js"></script>
+    <script src="scripts/main.min.js"></script>
+    <script src="scripts/jquery.validate.js">  </script>
+    <script src="scripts/jquery.validate-init.js">  </script>
     
-    <div class="event__content content">
-      <h5>
-        Программа мероприятия
-      </h5>
-      <ul>
-        <li>20:15 — Приветствие гостей</li>
-        <li>20:30 — Первая подача блюд | Салаты</li>
-        <li>20:40 — Живой вокал | Композиции 1-3</li>
-        <li>21:20 — Подача горячих блюд</li>
-        <li>21:30 — Живой вокал | Композиции 4-7</li>
-        <li>22:15 — Подача десерта</li>
-        <li>22:30 — Живой вокал | Композиции 8-9</li>
-        <li>23:00 — Завершение вечера</li>
-      </ul>
-      <h5>The Best Of Sade</h5>
-      <p>Первый альбом-компиляция Sade, выпущенный в 1994 году. 
-        Он содержит 9 треков, включая самые популярные хиты группы, 
-        раритеты и их любимые треки. 
-      </p>
-      <p>Группа продемонстрировала необычайное долголетие и 
-          креативность своей творческой карьеры.
-          Она лидировала музыкальных чартах с 1994 по 1995 год, став четырехкратно 
-          платиновой в США и продав более 2 миллионов копий в Европе.
-      </p>
-      <ol>
-        <li>Your Love Is King</li>
-        <li>Hang On To Your Love</li>
-        <li>Smooth Operator</li>
-        <li>Jezebel</li>
-        <li>The Sweetest Taboo</li>
-        <li>Is It A Crime</li>
-        <li>Never As Good As The First Time</li>
-        <li>Love Is Stronger Than Pride</li>
-        <li>Paradise</li>
-      </ol>
-
-    </div>
-
-    <form class="reserve event__reserve">
-    
-      <div class="reserve__checks" style="grid-area: checks;">
-        <h4 class="reserve__checks-title">Забронировать столик</h4>
-        <ul class="reserve__checks-list">
-          <li class="reserve__checks-item reserve__checks-item--checked">1 стол</li>
-          <li class="reserve__checks-item">2 стол</li>
-          <li class="reserve__checks-item">3 стол</li>
-          <li class="reserve__checks-item">4 стол</li>
-          <li class="reserve__checks-item">5 стол</li>
-          <li class="reserve__checks-item">6 стол</li>
-          <li class="reserve__checks-item reserve__checks-item--checked">7 стол</li>
-          <li class="reserve__checks-item">8 стол</li>
-          <li class="reserve__checks-item">9 стол</li>
-          <li class="reserve__checks-item reserve__checks-item--checked">10 стол</li>
-          <li class="reserve__checks-item">11 стол</li>
-        </ul>
-      </div>
-    
-
-
-    <div class="reserve__scheme" style="grid-area: scheme;">
-      <div class="reserve__scheme-wrapper">
-        <div class="reserve__scene-label">сцена</div>
-        <img src="assets\images\map.svg" alt="Схема столов" class="reserve__scheme-image">
-      </div>
-    </div>
-
-    <div class="reserve__order" style="grid-area: order;">Оформление заказа</div>
-
-
-    <div class="reserve__legend" style="grid-area: legend;">
-      <h4 class="reserve__title">Стоимость пригласительного билета</h4>
-      <ul class="reserve__price-list">
-        <li class="reserve__price-item">
-          <span class="reserve__badge reserve__badge--red-square"></span>
-          <span>1400 ₽ | 1 персона</span>
-        </li>
-        <li class="reserve__price-item">
-          <span class="reserve__badge reserve__badge--black-square"></span>
-          <span>1250 ₽ | 1 персона</span>
-        </li>
-      </ul>
-      
-      <div class="reserve__note">
-        <h5 class="reserve__note-title">Примечание</h5>
-        <ul class="reserve__note-list">
-          <li class="reserve__note-item">
-            <span class="reserve__badge reserve__badge--double-ring"></span>
-            <span>доступные места</span>
-          </li>
-          <li class="reserve__note-item">
-            <span class="reserve__badge reserve__badge--gray-circle"></span>
-            <span>забронировано</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-  </form>
-  </article>
-</main>
-<script src="scripts/main.min.js"></script>
-</body> 
+  </body> 
 </html>
